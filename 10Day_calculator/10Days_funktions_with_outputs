@@ -1,0 +1,65 @@
+# def format_name(fname, lname):
+
+#     print(fname.title())
+#     print(lname.title())
+# format_name("fikRET", "KocATüRk")
+
+
+# def funktion_1(text):
+#     return text + text
+
+# def funktion_2(text):
+#     return text.title()
+
+# output =funktion_2(funktion_1("hello"))
+# print(output)
+
+
+# ilk_sayi = int(input("bir sayi giriniz: "))
+# islem = input("Hangi islemi yapmak istiyorsunuz: add, sub, div, multi  ")
+# ikinci_sayi = input("lütfen ikinci sayiyi giriniz: ")
+# def add(a,b):
+#     return a + b
+# while True:
+    
+#     devam = input("Devam etmek isitoyrmusun?  y or n ")
+#     if devam == "n" :
+#         continue
+#     else:
+#         break
+# add(a=ilk_sayi,b=ikinci_sayi)   
+
+import art
+print (art.logo)
+
+
+def add(a,b):
+    return a + b
+def sub(a,b):
+    return a - b
+def div(a,b):
+    return a / b
+def multi(a,b):
+    return a * b
+islemler = {"+" : add,
+            "-" : sub,
+            "/" : div,
+            "*" : multi
+            }
+
+sayi_1 =  float(input("bir sayi giriniz  "))
+
+while True:
+    for sembol in islemler:
+        print(sembol)
+    
+    islem = input("bir islem giriniz  ")
+    sayi_2 =  float(input("ikinci bir sayi giriniz  ")) 
+    cevap = islemler[islem](sayi_1,sayi_2)      
+    print(f"{sayi_1} {islem} {sayi_2} = {cevap}")
+    secenek = input("Bu sonucla {cevap} devam etmek istiyorsaniz 'y' yazin, yoksa 'n' yazin.  ")
+
+    if secenek == "y":
+        sayi_1 = cevap
+    else:
+        pass
